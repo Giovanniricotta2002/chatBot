@@ -1,26 +1,78 @@
 intentions:
   salutation:
-    - "Bonjour"
-    - "Salut"
-    - "Bonsoir"
-    - "Hello"
+  - bien le bonjour
+  - bien le bonjour tout le monde
+  - hey tout le monde
+  - bonjour tout le monde
+  - coucou tout le monde
+  - salutations à tous
+  - Bonjour
+  - hey à tous
+  - Salut
+  - coucou
+  - Bonsoir
+  - salutations tout le monde
+  - salutations
+  - bien le bonjour à tous
+  - Hello
   menu:
-    - "menu"
-    - "carte"
-    - "que proposez-vous"
+  - qu'est-ce qu'il y a à manger s'il vous plaît
+  - carte
+  - que proposez-vous s'il vous plaît
+  - carte s'il vous plaît
+  - que proposez-vous
+  - montrez-moi le menu
+  - qu'est-ce qu'il y a à manger
+  - vos plats s'il vous plaît
+  - quels sont vos plats s'il vous plaît
+  - affichez la carte
+  - menu
+  - je veux voir le menu s'il vous plaît
+  - montrez-moi le menu s'il vous plaît
+  - affichez la carte s'il vous plaît
+  - je veux voir le menu
   commande:
-    - "je veux"
-    - "je commande"
-    - "j'aimerais"
+  - je commande une pizza pour emporter
+  - je veux commander une pizza
+  - commande pour deux personnes pour emporter
+  - je veux
+  - je passe commande s'il vous plaît
+  - je commande une pizza
+  - commande pour deux personnes
+  - j'aimerais
+  - puis-je passer une commande s'il vous plaît
+  - je commande
+  - je passe commande pour ce soir
+  - je voudrais commander pour ce soir
+  - je passe commande
+  - j'aimerais commander s'il vous plaît
+  - j'aimerais commander pour emporter
   horaires:
-    - "ouvert"
-    - "fermeture"
-    - "horaire"
+  - c'est ouvert le dimanche
+  - vos horaires
+  - à quelle heure fermez-vous le soir
+  - horaire
+  - fermeture
+  - ouvert
+  - quand fermez-vous
+  - à quelle heure ouvrez-vous
+  - heures d'ouverture
+  - quels sont vos horaires
   prix:
-    - "coût"
-    - "prix"
-    - "combien"
+  - coût
+  - prix
+  - combien ça coûte
+  - prix d'une pizza
+  - quel est le prix
+  - tarif
+  - combien coûte une pizza
+  - c'est combien
+  - combien
   au_revoir:
-    - "au revoir"
-    - "bye"
-    - "merci"
+  - bye
+  - bonne journée
+  - à la prochaine
+  - à bientôt
+  - bonne soirée
+  - au revoir
+  - merci
