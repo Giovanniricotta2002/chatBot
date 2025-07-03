@@ -1,3 +1,22 @@
+"""
+IntentClassifierEvaluator
+========================
+
+Module d'évaluation pour classificateur d'intentions de chatbot.
+
+Ce module fournit la classe IntentClassifierEvaluator, qui permet d'évaluer un modèle de classification d'intentions (scikit-learn compatible) sur un jeu de données français, avec split train/test ou Leave-One-Out, et tests obligatoires.
+
+Dépendances :
+- scikit-learn
+- numpy
+- collections
+
+Exemple d'utilisation :
+    >>> evaluator = IntentClassifierEvaluator(clf, texts, labels)
+    >>> evaluator.evaluate()
+    >>> evaluator.test_obligatoires()
+"""
+
 from collections import Counter
 import numpy as np
 from sklearn.model_selection import train_test_split, LeaveOneOut, cross_val_score
@@ -24,12 +43,10 @@ class IntentClassifierEvaluator:
         self.labels = labels
 
     def evaluate(self):
-        """
-        Évalue le classificateur sur le dataset fourni.
-        - Si le dataset est suffisant, effectue un split train/test (80/20) stratifié.
-        - Sinon, effectue une validation croisée Leave-One-Out.
-        Affiche précision, rappel, F1-score, matrice de confusion et rapport détaillé.
-        """
+        print("\n[IntentClassifierEvaluator] Début de l'évaluation...")
+        print(f"[IntentClassifierEvaluator] Nombre total d'exemples: {len(self.texts)}")
+        print(f"[IntentClassifierEvaluator] Nombre d'intentions: {len(set(self.labels))}")
+        print(f"[IntentClassifierEvaluator] Détail des classes: {Counter(self.labels)}")
 
         class_counts = Counter(self.labels)
         min_samples_per_class = min(class_counts.values())
@@ -55,25 +72,31 @@ class IntentClassifierEvaluator:
             print(f"   - Taille du test set calculée: {test_size}")
             print(f"   - Utilisation de validation croisée Leave-One-Out.")
             loo = LeaveOneOut()
+            print("[IntentClassifierEvaluator] Lancement de la validation croisée Leave-One-Out...")
             scores = cross_val_score(self.classifier.pipeline, np.array(self.texts), np.array(self.labels), cv=loo, scoring='accuracy')
+            print(f"[IntentClassifierEvaluator] Résultats Leave-One-Out: scores={scores}")
             print(f"Précision Leave-One-Out: {scores.mean():.2f} ± {scores.std():.2f}")
             if scores.mean() > 0.8:
                 print(f"🎯 Objectif atteint ! Précision > 80%")
             else:
                 print(f"❌ Objectif non atteint. Précision: {scores.mean()*100:.1f}%")
         else:
+            print("[IntentClassifierEvaluator] Split train/test stratifié 80/20...")
             X_train, X_test, y_train, y_test = train_test_split(
                 self.texts, self.labels, test_size=0.2, random_state=42, stratify=self.labels)
+            print(f"[IntentClassifierEvaluator] Taille train: {len(X_train)}, test: {len(X_test)}")
             self.classifier.train(X_train, y_train)
+            print("[IntentClassifierEvaluator] Prédiction sur le test set...")
             y_pred = self.classifier.pipeline.predict(X_test)
             acc = accuracy_score(y_test, y_pred)
             prec = precision_score(y_test, y_pred, average='weighted', zero_division=0)
             rec = recall_score(y_test, y_pred, average='weighted', zero_division=0)
             f1 = f1_score(y_test, y_pred, average='weighted', zero_division=0)
-            print(f"\nPrécision: {acc:.2f}")
-            print(f"\nPréc: {prec:.2f}")
-            print(f"Rappel: {rec:.2f}")
-            print(f"F1-score: {f1:.2f}")
+            print(f"\n[IntentClassifierEvaluator] Résultats sur le test set:")
+            print(f"  - Précision: {acc:.2f}")
+            print(f"  - Précision (weighted): {prec:.2f}")
+            print(f"  - Rappel (weighted): {rec:.2f}")
+            print(f"  - F1-score (weighted): {f1:.2f}")
             print(f"\nMatrice de confusion:")
             print(confusion_matrix(y_test, y_pred))
             print(f"\nRapport détaillé:\n{classification_report(y_test, y_pred)}")
@@ -81,16 +104,16 @@ class IntentClassifierEvaluator:
                 print(f"🎯 Objectif atteint ! Précision > 80%")
             else:
                 print(f"❌ Objectif non atteint. Précision: {acc*100:.1f}%")
-        print("\n✅ Évaluation terminée!")
+        print("\n[IntentClassifierEvaluator] Évaluation terminée!")
         print("=" * 60)
 
     def test_obligatoires(self):
-        """
-        Entraîne le classificateur sur toutes les données et prédit l'intention
-        pour un ensemble de phrases de test obligatoires. Affiche le résultat pour chaque phrase.
-        """
+        print("\n[IntentClassifierEvaluator] Lancement des tests obligatoires...")
+        print(f"[IntentClassifierEvaluator] Nombre d'exemples d'entraînement: {len(self.texts)}")
+        print(f"[IntentClassifierEvaluator] Nombre d'intentions: {len(set(self.labels))}")
         # Toujours entraîner sur tout le dataset avant les tests obligatoires
         self.classifier.train(self.texts, self.labels)
+        print("[IntentClassifierEvaluator] Classifieur entraîné sur tout le dataset pour les tests obligatoires.")
         print("\n🧪 Tests obligatoires sur des phrases personnalisées :")
         test_phrases = [
             # salutation
@@ -121,5 +144,8 @@ class IntentClassifierEvaluator:
             "Bye bye"
         ]
         for phrase in test_phrases:
+            print(f"[IntentClassifierEvaluator] Test sur: '{phrase}'")
             prediction = self.classifier.predict(phrase)
             print(f"  → '{phrase}'  =>  intention prédite : {prediction[0]}")
+        print("\n✅ Tous les tests obligatoires ont été exécutés.")
+        print("=" * 60)

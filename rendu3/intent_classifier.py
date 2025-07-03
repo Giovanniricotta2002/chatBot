@@ -1,3 +1,20 @@
+"""
+intent_classifier
+================
+
+Module de classification d'intentions pour chatbot français.
+
+Ce module fournit la classe IntentClassifier, qui encapsule un pipeline scikit-learn (TF-IDF + SVM) pour entraîner et prédire l'intention d'un message utilisateur en français.
+
+Dépendances :
+- scikit-learn
+
+Exemple d'utilisation :
+    >>> clf = IntentClassifier()
+    >>> clf.train(["Bonjour"], ["salutation"])
+    >>> clf.predict("Salut")
+"""
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
@@ -40,10 +57,14 @@ class IntentClassifier:
         ])
     
     def train(self, texts, labels):
+        print(f"[IntentClassifier] Entraînement sur {len(texts)} exemples...")
         self.pipeline.fit(texts, labels)
-    
+        print("[IntentClassifier] Entraînement terminé.")
+
     def predict(self, text):
+        print(f"[IntentClassifier] Prédiction pour: '{text}'")
         return self.pipeline.predict([text])
-    
+
     def predict_proba(self, text):
+        print(f"[IntentClassifier] Probabilités pour: '{text}'")
         return self.pipeline.predict_proba([text])

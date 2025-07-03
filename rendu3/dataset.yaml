@@ -1,186 +1,187 @@
 intentions:
   salutation:
-  - Hello
-  - hey tout le monde
-  - salutations à tous
-  - salutations tout le monde
-  - bonjour à tous et à toutes à tous
-  - Bonsoir
-  - hello tout le monde
-  - salut les copains tout le monde
-  - bonjour tout le monde tout le monde
-  - Salut
-  - hey à tous
+  - salut à toutes tout le monde
+  - bonjour cher ami à tous
+  - coucou tout le monde
   - bonjour cher ami
   - salut à tous tout le monde
   - bien le bonjour tout le monde
-  - bonjour tout le monde
-  - bonsoir
-  - salut à toutes tout le monde
-  - hello
-  - bonjour à tous à tous
-  - Bonjour
-  - bonne soirée à tous
   - salut la team à tous
-  - bonjour cher ami à tous
-  - salutations
+  - salut les copains tout le monde
+  - bonjour à tous et à toutes à tous
+  - hey à tous
+  - salutations tout le monde
   - bien le bonjour à tous
-  - salut à toi tout le monde
-  - coucou tout le monde
-  - bien le bonjour
+  - Salut
+  - bonne soirée à tous
+  - bonjour à tous à tous
   - coucou
+  - bien le bonjour
+  - salutations
+  - Bonjour
+  - bonsoir
   - salut à tous
+  - hello
+  - hey tout le monde
+  - bonjour tout le monde
+  - Hello
+  - bonjour tout le monde tout le monde
+  - Bonsoir
+  - salut à toi tout le monde
+  - hello tout le monde
+  - salutations à tous
   menu:
-  - je veux voir le menu
-  - montrez-moi la carte s'il vous plaît
   - je veux voir ce que vous servez s'il vous plaît
-  - je veux connaître vos menus
-  - montrez-moi le menu
-  - qu'est-ce qu'il y a à manger s'il vous plaît
   - quels plats recommandez-vous ? s'il vous plaît
-  - affichez la carte
-  - montrez-moi vos spécialités s'il vous plaît
-  - je souhaite voir la carte s'il vous plaît
-  - menu
-  - je veux connaître vos menus s'il vous plaît
-  - vos plats
-  - qu'est-ce qu'il y a à manger
-  - que proposez-vous
-  - quels sont vos plats s'il vous plaît
-  - vos plats s'il vous plaît
-  - montrez-moi le menu s'il vous plaît
-  - affichez la carte s'il vous plaît
-  - je souhaite voir la carte
-  - je veux voir la carte du jour s'il vous plaît
-  - que proposez-vous s'il vous plaît
-  - je veux voir la carte des desserts s'il vous plaît
-  - je veux voir la carte complète s'il vous plaît
-  - qu'avez-vous à proposer ?
+  - je veux voir la carte complète
   - carte s'il vous plaît
   - je veux voir la carte spéciale s'il vous plaît
-  - je veux voir le menu s'il vous plaît
+  - montrez-moi la carte s'il vous plaît
+  - affichez la carte
+  - menu
+  - qu'avez-vous à proposer ?
+  - montrez-moi vos spécialités s'il vous plaît
+  - montrez-moi le menu
+  - je veux voir la carte du jour s'il vous plaît
+  - qu'est-ce qu'il y a à manger s'il vous plaît
+  - quels sont vos plats s'il vous plaît
+  - je veux connaître vos menus
+  - je veux voir le menu
+  - je veux voir la carte complète s'il vous plaît
+  - je souhaite voir la carte s'il vous plaît
+  - je souhaite voir la carte
+  - que proposez-vous
+  - affichez la carte s'il vous plaît
+  - que proposez-vous s'il vous plaît
+  - je veux connaître vos menus s'il vous plaît
+  - je veux voir la carte des desserts s'il vous plaît
+  - montrez-moi le menu s'il vous plaît
+  - vos plats s'il vous plaît
   - carte
-  - je veux voir la carte complète
+  - je veux voir le menu s'il vous plaît
+  - vos plats
+  - qu'est-ce qu'il y a à manger
   commande:
-  - je veux commander pour ce midi pour emporter
-  - j'aimerais commander s'il vous plaît
-  - je commande une pizza pour emporter
-  - je voudrais commander pour ce soir
-  - je passe commande pour ce soir
-  - je passe commande
-  - je passe une commande groupée pour ce soir
-  - je veux commander pour demain s'il vous plaît
-  - je veux commander un dessert pour ce soir
-  - je veux commander pour un événement s'il vous plaît
-  - commande pour deux personnes
-  - j'aimerais commander pour emporter
-  - je veux commander une entrée
-  - je commande
-  - je passe commande pour emporter
-  - je passe commande s'il vous plaît
-  - puis-je passer une commande s'il vous plaît
   - je veux commander pour une réunion s'il vous plaît
+  - je veux commander pour demain s'il vous plaît
+  - je passe commande pour emporter
+  - je veux commander une entrée
   - je veux commander une salade
+  - je veux commander un dessert pour ce soir
+  - je veux commander un plat principal pour emporter
+  - commande pour deux personnes s'il vous plaît
+  - je passe commande pour ce soir
+  - je commande une pizza pour emporter
   - je veux commander une pizza pour emporter
   - je veux commander pour un événement pour emporter
-  - commande pour deux personnes pour emporter
+  - je veux
+  - je voudrais commander pour ce soir
+  - je passe commande s'il vous plaît
+  - je commande
   - je veux commander une pizza
   - je veux passer commande pour emporter
-  - j'aimerais
-  - je veux
-  - je veux commander un plat principal pour emporter
+  - je passe commande
+  - commande pour deux personnes pour emporter
+  - je passe une commande groupée pour ce soir
+  - j'aimerais commander s'il vous plaît
   - je commande une pizza
   - je veux commander pour un déjeuner s'il vous plaît
-  - commande pour deux personnes s'il vous plaît
+  - commande pour deux personnes
+  - je veux commander pour un événement s'il vous plaît
+  - j'aimerais
+  - puis-je passer une commande s'il vous plaît
+  - j'aimerais commander pour emporter
+  - je veux commander pour ce midi pour emporter
   horaires:
-  - à quelle heure ouvrez-vous
-  - quels sont vos horaires d'ouverture ?
-  - horaire
-  - c'est ouvert le dimanche
-  - vos horaires pendant les vacances ?
-  - êtes-vous ouverts les jours fériés ?
-  - vos heures d'ouverture ?
-  - vos horaires pour les fêtes ?
-  - à quelle heure se termine le service ?
-  - quand puis-je venir ?
-  - vos horaires spéciaux ?
-  - quand fermez-vous
-  - à quelle heure puis-je commander ?
-  - à quelle heure puis-je venir ?
   - à quelle heure fermez-vous le samedi ?
-  - quels sont vos horaires de fermeture ?
-  - êtes-vous ouverts en semaine ?
-  - vos horaires
-  - heures d'ouverture
-  - vos horaires d'ouverture le week-end ?
-  - ouvert
-  - vos horaires exceptionnels ?
-  - êtes-vous ouverts ce soir ?
-  - êtes-vous ouverts le midi ?
-  - êtes-vous ouverts le soir ?
-  - êtes-vous ouverts pendant les vacances ?
+  - quand fermez-vous
+  - à quelle heure puis-je venir ?
+  - à quelle heure puis-je commander ?
   - quels sont vos horaires
-  - à quelle heure fermez-vous le soir
+  - êtes-vous ouverts les jours fériés ?
+  - c'est ouvert le dimanche
+  - quels sont vos horaires d'ouverture ?
+  - vos horaires exceptionnels ?
   - fermeture
+  - à quelle heure se termine le service ?
+  - à quelle heure ouvrez-vous
+  - êtes-vous ouverts le soir ?
+  - êtes-vous ouverts ce soir ?
+  - horaire
+  - vos heures d'ouverture ?
+  - êtes-vous ouverts en semaine ?
+  - vos horaires spéciaux ?
+  - vos horaires pour les fêtes ?
+  - heures d'ouverture
+  - vos horaires pendant les vacances ?
+  - ouvert
+  - quand puis-je venir ?
+  - à quelle heure fermez-vous le soir
+  - vos horaires
+  - êtes-vous ouverts pendant les vacances ?
+  - êtes-vous ouverts le midi ?
+  - vos horaires d'ouverture le week-end ?
   - êtes-vous ouverts aujourd'hui ?
+  - quels sont vos horaires de fermeture ?
   prix:
-  - combien coûte un plat principal ?
-  - combien coûte un dessert ?
-  - combien coûte une boisson ?
-  - combien coûte une pizza 4 fromages ?
-  - combien coûte une entrée ?
-  - prix d'une pizza
-  - combien coûte une pizza royale ?
-  - quel est le prix total ?
-  - combien coûte une pizza margherita ?
-  - combien
   - quel est le prix
-  - prix
-  - combien coûte une pizza pepperoni ?
-  - quel est le tarif d'un menu ?
-  - c'est combien
+  - combien coûte une pizza 4 fromages ?
+  - combien coûte une pizza calzone ?
+  - prix d'une pizza
+  - combien
+  - quel est le prix total ?
+  - combien coûte une pizza
+  - combien coûte un plat principal ?
   - combien coûte une pizza hawaïenne ?
-  - combien ça coûte
-  - combien coûte une pizza végétarienne ?
   - combien coûte une pizza napolitaine ?
+  - combien coûte une pizza royale ?
+  - combien coûte une entrée ?
+  - coût
+  - combien coûte une pizza spéciale ?
+  - combien coûte une boisson ?
+  - combien coûte un menu complet ?
+  - prix
+  - combien dois-je payer ?
   - combien coûte un menu enfant ?
   - combien pour deux menus ?
-  - combien coûte un menu complet ?
-  - tarif
-  - combien dois-je payer ?
-  - combien coûte une pizza
-  - combien coûte une pizza spéciale ?
-  - combien pour une boisson ?
+  - combien coûte une pizza margherita ?
+  - combien coûte une pizza végétarienne ?
+  - combien ça coûte
+  - combien coûte un dessert ?
+  - quel est le tarif d'un menu ?
   - quel est le prix d'un dessert ?
-  - coût
-  - combien coûte une pizza calzone ?
+  - combien coûte une pizza pepperoni ?
+  - tarif
+  - c'est combien
+  - combien pour une boisson ?
   au_revoir:
-  - merci et à une prochaine fois
-  - merci et à tout à l'heure
   - merci beaucoup
   - merci et au revoir
-  - bonne journée
-  - à tout à l'heure
-  - merci et bonne journée
+  - merci et à bientôt
   - bonne soirée
-  - à la prochaine fois
-  - à la prochaine
-  - à une prochaine fois
   - merci et à plus
+  - bonne continuation
+  - merci et bonne nuit
+  - merci et bonne continuation
+  - à une prochaine fois
+  - merci et à tout à l'heure
   - à bientôt
-  - bye
   - merci
   - merci pour tout
-  - merci et bonne fin de journée
-  - merci et bonne nuit
-  - merci et à plus tard
-  - merci et à bientôt
-  - merci et bonne soirée
-  - au revoir
-  - bonne nuit
-  - merci et à la prochaine
-  - à plus
-  - bonne continuation
   - bonne fin de journée
+  - au revoir
+  - à la prochaine fois
+  - à plus
+  - merci et bonne fin de journée
+  - bonne nuit
+  - merci et bonne journée
+  - à la prochaine
+  - à tout à l'heure
+  - bonne journée
+  - Merci Alphonse !
+  - merci et à une prochaine fois
+  - merci et à la prochaine
   - à plus tard
-  - merci et bonne continuation
+  - merci et bonne soirée
+  - bye
+  - merci et à plus tard

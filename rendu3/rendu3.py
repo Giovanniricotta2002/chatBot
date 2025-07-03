@@ -1,3 +1,22 @@
+"""
+rendu3
+======
+
+Script principal pour l'orchestration du pipeline de classification d'intentions chatbot.
+
+Ce script charge le dataset YAML, initialise les modules de prétraitement, classification, NLP et évaluation, et exécute les tests principaux.
+
+Dépendances :
+- yaml
+- intent_classifier
+- TextPreprocessor
+- nlp_processor
+- IntentClassifierEvaluator
+
+Exemple d'utilisation :
+    $ python rendu3.py
+"""
+
 from TextPreprocessor import TextPreprocessor
 from nlp_processor import NLPProcessor
 from intent_classifier import IntentClassifier
@@ -32,71 +51,6 @@ def classify_intent_with_preprocessing(message, preprocessor, classifier):
 
 # Tests et exemples d'utilisation
 if __name__ == "__main__":
-    # print("🤖 Classe TextPreprocessor - Module de Preprocessing NLTK")
-    # print("=" * 60)
-    
-    # # Initialiser le preprocesseur
-    # preprocessor = TextPreprocessor(language='french', download_resources=True)
-    
-    # # Messages de test selon les consignes
-    # test_messages = [
-    #     "Bonjour ! J'aimerais commander une pizza margherita s'il vous plaît.",
-    #     "Pouvez-vous me dire les horaires d'ouverture de votre restaurant ?",
-    #     "Je voudrais annuler ma commande précédente, merci beaucoup.",
-    #     "   Bonjour, j'ai une question concernant ma commande        .",
-    # ]
-    
-    # print("\n📋 Tests individuels avec verbose:")
-    # for i, message in enumerate(test_messages, 1):
-    #     print(f"\n🧪 TEST {i}")
-    #     print("-" * 40)
-    #     result = preprocessor.preprocess_message(message, verbose=True)
-    #     print("-" * 60)
-    
-    # print("\n📦 Test de traitement en lot:")
-    # print("-" * 40)
-    # batch_results = preprocessor.process_batch(test_messages, verbose=False)
-    
-    # print("*=*" * 60)
-    # print("\n🧠 Tests des fonctions spaCy:")
-    # print("=" * 60)
-    
-    # # Initialiser le processeur NLP
-    # nlp_processor = NLPProcessor()
-    
-    # # Test d'une phrase avec spaCy
-    # test_sentence = [
-    #     "Marie Dupont travaille chez Google à Paris.",
-    #     "Bonjour ! J'aimerais commander une pizza margherita s'il vous plaît.",
-    #     "Pouvez-vous me dire les horaires d'ouverture de votre restaurant ?",
-    #     "Je voudrais annuler ma commande précédente, merci beaucoup.",
-    #     "Bonjour, j'ai une question concernant ma commande.",
-    # ]
-    
-    # for i, sentence in enumerate(test_sentence, 1):
-    #     print(f"\n📝 Phrase de test {i}: '{sentence}'")
-        
-    #     # Test analyse POS
-    #     print("\n🔤 Analyse morpho-syntaxique:")
-    #     pos_result = nlp_processor.analyze_pos(sentence)
-    #     for token in pos_result['pos_analysis']:
-    #         if token['is_alpha']:
-    #             print(f"  {token['text']:12} | {token['pos']:8} | {token['lemma']:12} | {token['dep']:8}")
-        
-    #     # Test entités nommées
-    #     print("\n👤 Entités nommées:")
-    #     entities = nlp_processor.extract_entities(sentence)
-    #     for entity_type, entity_list in entities.items():
-    #         print(f"  {entity_type}: {[e['text'] for e in entity_list]}")
-        
-    #     # Test dépendances
-    #     print("\n🌳 Dépendances syntaxiques:")
-    #     deps = nlp_processor.analyze_dependencies(sentence)
-    #     print(f"  Racines: {deps['roots']}")
-    #     print("-" * 50)
-        
-    # print("\n✅ Tests terminés!")
-
     # Charger et afficher le dataset
     dataset = readFile()
     print("✅ Fichier YAML lu avec succès!")

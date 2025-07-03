@@ -1,3 +1,19 @@
+"""
+nlp_processor
+=============
+
+Module d'analyse linguistique avancée pour chatbot français utilisant spaCy.
+
+Ce module fournit la classe NLPProcessor, qui permet d'effectuer l'analyse morpho-syntaxique, l'extraction d'entités nommées et l'analyse des dépendances sur des textes en français.
+
+Dépendances :
+- spacy
+
+Exemple d'utilisation :
+    >>> nlp = NLPProcessor()
+    >>> result = nlp.full_analysis("Bonjour, je m'appelle Paul.")
+"""
+
 import spacy
 from typing import Dict, List, Any
 
@@ -10,6 +26,7 @@ class NLPProcessor:
     """
     
     def __init__(self, model_name="fr_core_news_sm"):
+        print(f"[NLPProcessor] Chargement du modèle spaCy '{model_name}'...")
         """
         Initialise le processeur NLP.
         
@@ -25,6 +42,7 @@ class NLPProcessor:
             raise
     
     def analyze_pos(self, text: str) -> Dict[str, Any]:
+        print(f"[NLPProcessor] Analyse POS pour: '{text}'")
         """
         Analyse les parties du discours et retourne les entités nommées.
         
@@ -57,7 +75,6 @@ class NLPProcessor:
             entities.append({
                 'text': ent.text,
                 'label': ent.label_,
-                'label_': spacy.explain(ent.label_),
                 'start': ent.start_char,
                 'end': ent.end_char
             })
@@ -72,6 +89,7 @@ class NLPProcessor:
         }
     
     def extract_entities(self, text: str) -> Dict[str, List[Dict]]:
+        print(f"[NLPProcessor] Extraction des entités pour: '{text}'")
         """
         Extraire personnes, lieux, organisations, etc.
         
@@ -99,7 +117,7 @@ class NLPProcessor:
                 'text': ent.text,
                 'start': ent.start_char,
                 'end': ent.end_char,
-                'label_': spacy.explain(ent.label_)
+                'label_': ent.label_
             }
             
             if ent.label_ in entities_by_type:
@@ -111,6 +129,7 @@ class NLPProcessor:
         return {k: v for k, v in entities_by_type.items() if v}
     
     def analyze_dependencies(self, text: str) -> Dict[str, Any]:
+        print(f"[NLPProcessor] Analyse des dépendances pour: '{text}'")
         """
         Analyser la structure syntaxique.
         
@@ -128,7 +147,6 @@ class NLPProcessor:
                 'text': token.text,
                 'pos': token.pos_,
                 'dep': token.dep_,
-                'dep_': spacy.explain(token.dep_),
                 'head': token.head.text,
                 'children': [child.text for child in token.children],
                 'is_root': token.dep_ == 'ROOT'
@@ -190,6 +208,7 @@ class NLPProcessor:
         }
     
     def full_analysis(self, text: str, verbose: bool = True) -> Dict[str, Any]:
+        print(f"[NLPProcessor] Analyse complète pour: '{text}'")
         """
         Analyse complète d'un texte.
         
