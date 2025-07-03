@@ -2,12 +2,22 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Dire bonjour à chaque fois
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - intent: saluer
+  - action: utter_saluer
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Dire au revoir à chaque fois
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: dire_aurevoir
+  - action: utter_aurevoir
+
+- rule: Répondre au menu
+  steps:
+  - intent: demander_menu
+  - action: utter_menu
+
+- rule: Répondre aux horaires
+  steps:
+  - intent: demander_horaires
+  - action: utter_horaires

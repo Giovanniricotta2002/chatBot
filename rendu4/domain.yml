@@ -1,33 +1,54 @@
-version: "3.1"
+version: '3.1'
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - saluer
+  - demander_menu
+  - commander
+  - demander_prix
+  - demander_horaires
+  - dire_aurevoir
+
+entities:
+  - produit
+
+slots:
+  produit:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: produit
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_saluer:
+    - text: "Bonjour ! Bienvenue chez Pizza Rasa. Comment puis-je vous aider ?"
+    - text: "Salut ! Que puis-je faire pour vous aujourd'hui ?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_menu:
+    - text: |
+        Voici notre menu :
+        🍕 Margherita - 12€
+        🍕 Regina - 14€  
+        🍕 Calzone - 16€
+        🍕 Quatre Saisons - 15€
+        
+        Que souhaitez-vous commander ?
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_prix_margherita:
+    - text: "La pizza Margherita coûte 12€."
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_commande_confirmee:
+    - text: "Votre commande a été confirmée ! Merci de votre choix. Nous préparons votre pizza."
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_prix_regina:
+    - text: "La pizza Regina coûte 14€."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_horaires:
+    - text: "Nous sommes ouverts du mardi au dimanche de 18h à 23h. Fermé le lundi."
+
+  utter_aurevoir:
+    - text: "Au revoir ! Merci de votre visite chez Pizza Rasa !"
+    - text: "À bientôt ! Bonne soirée !"
 
 session_config:
   session_expiration_time: 60
