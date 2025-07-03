@@ -71,6 +71,7 @@ class IntentClassifierEvaluator:
             rec = recall_score(y_test, y_pred, average='weighted', zero_division=0)
             f1 = f1_score(y_test, y_pred, average='weighted', zero_division=0)
             print(f"\nPrécision: {acc:.2f}")
+            print(f"\nPréc: {prec:.2f}")
             print(f"Rappel: {rec:.2f}")
             print(f"F1-score: {f1:.2f}")
             print(f"\nMatrice de confusion:")
@@ -92,10 +93,32 @@ class IntentClassifierEvaluator:
         self.classifier.train(self.texts, self.labels)
         print("\n🧪 Tests obligatoires sur des phrases personnalisées :")
         test_phrases = [
-            "Bonsoir, je souhaiterais voir votre menu",
-            "À quelle heure fermez-vous le dimanche ?",
-            "Combien coûte une pizza Regina ?",
-            "Je veux commander trois pizzas margherita"
+            # salutation
+            "Bonjour !",
+            "Salut à tous",
+            "Coucou, comment ça va ?",
+            "Hey tout le monde",
+            # menu
+            "Puis-je voir la carte ?",
+            "Qu'est-ce qu'il y a à manger ?",
+            "Affichez-moi le menu s'il vous plaît",
+            # commande
+            "Je veux commander trois pizzas margherita",
+            "Je voudrais commander un menu pour deux personnes",
+            "Commande pour emporter, s'il vous plaît",
+            # horaires
+            "À quelle heure ouvrez-vous le matin ?",
+            "Êtes-vous ouverts le dimanche ?",
+            "Quand fermez-vous ce soir ?",
+            # prix
+            "Quel est le prix d'une pizza 4 fromages ?",
+            "C'est combien pour un menu complet ?",
+            "Combien coûte une boisson ?",
+            # au_revoir
+            "Merci, au revoir !",
+            "Bonne journée à vous",
+            "À la prochaine !",
+            "Bye bye"
         ]
         for phrase in test_phrases:
             prediction = self.classifier.predict(phrase)
