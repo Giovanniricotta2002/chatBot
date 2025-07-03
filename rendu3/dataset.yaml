@@ -1,0 +1,26 @@
+intentions:
+  salutation:
+    - "Bonjour"
+    - "Salut"
+    - "Bonsoir"
+    - "Hello"
+  menu:
+    - "menu"
+    - "carte"
+    - "que proposez-vous"
+  commande:
+    - "je veux"
+    - "je commande"
+    - "j'aimerais"
+  horaires:
+    - "ouvert"
+    - "fermeture"
+    - "horaire"
+  prix:
+    - "coût"
+    - "prix"
+    - "combien"
+  au_revoir:
+    - "au revoir"
+    - "bye"
+    - "merci"
