@@ -1,0 +1,58 @@
+version: "3.1"
+
+entities:
+  - nom
+  - date
+  - heure
+  - nombre_personnes
+
+slots:
+  nom:
+    type: text
+    influence_conversation: true
+  date:
+    type: text
+    influence_conversation: true
+  heure:
+    type: text
+    influence_conversation: true
+  nombre_personnes:
+    type: text
+    influence_conversation: true
+
+intents:
+  - demander_reservation
+  - donner_nom
+  - donner_date
+  - donner_heure
+  - donner_nombre
+  - confirmer_reservation
+  - annuler_reservation
+
+responses:
+  utter_demander_nom:
+    - text: "Parfait ! Pour commencer la réservation, quel est votre nom s'il vous plaît ?"
+  
+  utter_demander_date:
+    - text: "Merci {nom} ! Pour quelle date souhaitez-vous réserver ?"
+  
+  utter_demander_heure:
+    - text: "Et à quelle heure préféreriez-vous venir le {date} ?"
+  
+  utter_demander_nombre_personnes:
+    - text: "Combien de personnes serez-vous le {date} à {heure} ?"
+  
+  utter_confirmer_reservation:
+    - text: |
+        Parfait ! Récapitulatif de votre réservation :
+        📋 Nom : {nom}
+        📅 Date : {date}
+        🕐 Heure : {heure}
+        👥 Nombre de personnes : {nombre_personnes}
+        
+        Confirmez-vous cette réservation ?
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
