@@ -37,8 +37,16 @@ stories:
   - action: utter_demander_nom
   - intent: demander_menu  # Interruption
   - action: utter_menu
-  - action: utter_reprendre_reservation
+  - action: action_listen  # Attendre une nouvelle entrée utilisateur
   - intent: donner_nom
   - slot_was_set:
     - nom: "Martin"
   - action: utter_demander_date
+
+- story: reservation avec form
+  steps:
+  - intent: demander_reservation
+  - action: reservation_form
+  - active_loop: reservation_form
+  - active_loop: null
+  - action: utter_reservation_complete

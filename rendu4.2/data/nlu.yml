@@ -45,7 +45,7 @@ nlu:
     - à bientôt
     - merci au revoir
 
-- entity: produit
+- lookup: produit
   examples: |
     - margherita
     - regina

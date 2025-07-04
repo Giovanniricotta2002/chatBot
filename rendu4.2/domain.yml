@@ -9,16 +9,43 @@ entities:
 slots:
   nom:
     type: text
-    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nom
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: nom
+  
   date:
     type: text
-    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: date
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: date
+  
   heure:
     type: text
-    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: heure
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: heure
+  
   nombre_personnes:
     type: text
-    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nombre_personnes
+    - type: from_text
+      conditions:
+      - active_loop: reservation_form
+        requested_slot: nombre_personnes
 
 intents:
   - demander_reservation
@@ -28,6 +55,10 @@ intents:
   - donner_nombre
   - confirmer_reservation
   - annuler_reservation
+  - saluer
+  - dire_aurevoir
+  - demander_menu
+  - demander_horaires
 
 responses:
   utter_demander_nom:
@@ -51,6 +82,72 @@ responses:
         👥 Nombre de personnes : {nombre_personnes}
         
         Confirmez-vous cette réservation ?
+  
+  utter_menu:
+    - text: |
+        🍕 Voici notre menu de pizzas :
+        
+        🔸 Margherita - Tomate, mozzarella, basilic
+        🔸 Regina - Tomate, mozzarella, jambon, champignons
+        🔸 Calzone - Pizza fermée avec ricotta, mozzarella, jambon
+        🔸 Quatre Saisons - Tomate, mozzarella, jambon, champignons, artichauts, olives
+        🔸 Napolitaine - Tomate, mozzarella, anchois, câpres, olives
+        
+        Que souhaitez-vous commander ?
+  
+  utter_aurevoir:
+    - text: "Au revoir et merci de votre visite ! À bientôt ! 👋"
+    - text: "Merci et bonne journée ! N'hésitez pas à revenir ! 😊"
+    - text: "À bientôt ! Merci d'avoir choisi notre restaurant ! 🍕"
+  
+  utter_saluer:
+    - text: "Bonjour ! Bienvenue dans notre pizzeria ! 🍕"
+    - text: "Salut ! Comment puis-je vous aider aujourd'hui ?"
+    - text: "Bonsoir ! Ravi de vous accueillir ! Que puis-je faire pour vous ?"
+    - text: "Hello ! Bienvenue ! En quoi puis-je vous être utile ?"
+  
+  utter_horaires:
+    - text: |
+        🕐 Nos horaires d'ouverture :
+        
+        📅 Lundi - Jeudi : 11h30 - 14h30 / 18h00 - 22h30
+        📅 Vendredi - Samedi : 11h30 - 14h30 / 18h00 - 23h00
+        📅 Dimanche : 18h00 - 22h00
+        
+        Nous sommes fermés le mardi.
+  
+  utter_ask_nom:
+    - text: "Quel est votre nom pour la réservation ?"
+  
+  utter_ask_date:
+    - text: "Pour quelle date souhaitez-vous réserver ?"
+  
+  utter_ask_heure:
+    - text: "À quelle heure préféreriez-vous venir ?"
+  
+  utter_ask_nombre_personnes:
+    - text: "Combien de personnes serez-vous ?"
+  
+  utter_reprendre_reservation:
+    - text: "Maintenant, reprenons votre réservation. Quel est votre nom ?"
+    - text: "Parfait ! Continuons avec votre réservation."
+  
+  utter_reservation_complete:
+    - text: |
+        ✅ **Réservation terminée avec succès !**
+        
+        📋 Votre réservation a été enregistrée.
+        📞 Nous vous confirmerons par téléphone dans les plus brefs délais.
+        
+        Merci de votre confiance ! 🍕😊
+
+forms:
+  reservation_form:
+    required_slots:
+      - nom
+      - date
+      - heure
+      - nombre_personnes
 
 session_config:
   session_expiration_time: 60
